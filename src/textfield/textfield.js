@@ -180,6 +180,25 @@
     if (value) {
       this.input_.value = value;
     }
+    var event = new Event('input', {
+      bubbles: true,
+      cancelable: false
+    });
+    this.input_.dispatchEvent(event);
+    this.updateClasses_();
+  };
+
+  /**
+   * Update text field value.
+   *
+   * @param {String} value The value to which to set the control (optional).
+   * @public
+   */
+  MaterialTextfield.prototype.value = function(value) {
+
+    if (value) {
+      this.input_.value = value;
+    }
     this.updateClasses_();
   };
 
